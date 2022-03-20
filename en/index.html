@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Anna Christ - Screenwriter & documentary filmmaker from Munich, living in Berlin"
+    />
+    <meta
+      name="keywords"
+      content="anna christ, screenplay, screenwriter, documentary filmmaker, berlin, munich, filmmaker, author"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../public/css/styles.css" />
+
+    <title>Anna Christ - Screenwriter & Documentary Filmmaker</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <ul class="navbar-lang">
+          <li data-lang="de" class="inactive-language">DE</li>
+          <li class="active-language" data-lang="en">EN</li>
+        </ul>
+        <ul class="navbar-items">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="scripts.html">Screenplay</a></li>
+          <li><a href="documentaries.html">Documentary</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="navbar-burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="landing-wrapper">
+      <div class="landing-header">
+        <div class="landing-left"></div>
+        <div class="landing-center">
+          <h1 class="landing-title"><span>ANNA</span> <span>CHRIST</span></h1>
+          <h3 class="landing-subtitle">Screenwriter - Documentary Filmmaker</h3>
+        </div>
+        <div class="landing-right"></div>
+      </div>
+      <div class="landing-cta">
+        <button class="cta-button"><a href="contact.html">Contact</a></button>
+      </div>
+    </main>
+    <footer>
+      <nav class="footer-links">
+        <a href="impress.html">Impress & Privacy</a>
+        <div class="social-media">
+          <a href="https://vimeo.com/user35570468" target="_blank">
+            <i class="fab fa-vimeo-v"></i><span>isit me!</span></a
+          >
+        </div>
+      </nav>
+      <div class="copyright">
+        &copy; <span class="year">2021</span> Anna Christ
+      </div>
+    </footer>
+
+    <script src="../public/js/navbar.js"></script>
+    <script>
+      const landingHeader = document.querySelector(".landing-header");
+      const landingCta = document.querySelector(".landing-cta");
+
+      document.addEventListener("DOMContentLoaded", (e) => {
+        landingCta.classList.add("animation");
+        landingHeader.classList.add("animation");
+      });
+    </script>
+  </body>
+</html>

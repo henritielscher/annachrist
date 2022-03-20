@@ -1,0 +1,399 @@
+.modal {
+  position: relative;
+}
+
+.active-modal .modal-container {
+  display: flex;
+}
+
+.modal-container {
+  display: none;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+
+  img {
+    max-width: 85%;
+    max-height: 85%;
+    width: auto;
+    height: auto;
+    // object-fit: contain;
+  }
+
+  i {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: $primary-light-accent;
+  }
+}
+
+.glider-contain {
+  margin-top: 80px;
+  width: 100%;
+  position: relative;
+}
+
+// #dots {margin-top: 1rem;}
+
+.glider-next,
+.glider-prev {
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+.glider-next {
+  right: 15px;
+  top: 50%;
+}
+.glider-prev {
+  left: 15px;
+  top: 50%;
+}
+
+.glider {
+  height: 200px;
+  overflow-x: hidden;
+
+  .glider-image {
+    position: relative;
+
+    cursor: pointer;
+
+    .glider-image-overlay:hover {
+      opacity: 1;
+
+      h1 {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+.glider-image-overlay {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1;
+  transition: opacity 300ms ease-in;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: $primary-light;
+  overflow-x: hidden;
+
+  h1 {
+    position: absolute;
+    font-size: 15px;
+    transform: translateX(-80px);
+    opacity: 0;
+    transition: all 250ms ease-in;
+    padding: 0 0.5rem;
+  }
+}
+
+.vita-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  overflow-x: hidden;
+  flex-wrap: wrap;
+}
+
+.vita-container {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  .main-header {
+    margin-top: 1rem;
+    hyphens: auto;
+  }
+}
+
+.vita-title {
+  font-family: $font-secondary;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  letter-spacing: 8px;
+}
+
+.vita-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.vita-year {
+  display: flex;
+  flex-direction: column;
+
+  .vita-year-title {
+    font-family: $font-secondary;
+    padding: 1.4rem 1rem 0.7rem 1rem;
+    background-color: $primary-light;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: $primary-dark;
+    border-radius: 3px;
+  }
+}
+
+.vita-works {
+  display: flex;
+  flex-direction: column;
+
+  &:last-child {
+    margin-bottom: 2rem;
+  }
+}
+
+.vita-work {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  line-height: 2;
+  font-size: 14px;
+
+  &-production {
+    font-weight: 700;
+  }
+
+  &-role,
+  &-production,
+  &-genre,
+  &-coauthor,
+  &-director,
+  &-distribution,
+  &-publisher,
+  &-codirector {
+    display: flex;
+    justify-content: flex-start;
+
+    span:nth-child(1) {
+      min-width: 45%;
+      width: fit-content;
+      font-weight: 700;
+      // text-decoration: underline;
+    }
+    span:nth-child(2) {
+      min-width: min-content;
+      // max-width: 50%;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+  }
+}
+
+.vita-work-title {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  letter-spacing: 6px;
+  color: $primary-light;
+  font-family: $font-secondary;
+}
+
+.vita-work-type {
+  margin-bottom: 1rem;
+}
+
+.active-additional {
+  .additional-list {
+    display: block;
+  }
+}
+
+.vita-work-additional {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: fit-content;
+    background-color: $primary-dark;
+    border-radius: 5px;
+    color: $primary-light;
+    padding: 0.25rem 1rem;
+    cursor: pointer;
+    border: 2px solid $primary-light;
+    transition: all 150ms ease-in-out;
+
+    i {
+      margin-right: 0.8rem;
+      transition: transform 650ms ease-out;
+    }
+  }
+
+  ul {
+    display: none;
+    margin-top: 1rem;
+    max-height: 250px;
+    overflow-y: auto;
+  }
+}
+
+.vita-work-additional div:hover {
+  transform: translateY(-3px);
+  // font-weight: 700;
+  color: $primary-light-accent;
+
+  i {
+    transform: rotate(180deg);
+  }
+}
+
+// TOP SCROLL ARROW
+
+.fa-arrow-up {
+  opacity: 0;
+  font-size: 2rem;
+  position: fixed;
+  bottom: 140px;
+  right: 5%;
+  z-index: 3;
+  transform: translateY(200px);
+  transition: all 0.4s ease-out;
+  cursor: pointer;
+}
+
+@include x-small {
+  .vita-wrapper {
+    width: 80%;
+  }
+
+  .vita-work {
+    font-size: 15px;
+  }
+
+  .glider {
+    height: 280px;
+  }
+}
+
+@include small {
+  .vita-work {
+    font-size: 16px;
+
+    span:nth-child(1) {
+      min-width: 35%;
+    }
+  }
+
+  .glider {
+    height: 320px;
+  }
+}
+
+@include tablet {
+  .vita-wrapper {
+    width: 70%;
+  }
+
+  .glider {
+    height: 450px;
+  }
+
+  .glider-image-overlay h1 {
+    font-size: 21px;
+  }
+
+  .active-arrow {
+    .fa-arrow-up {
+      display: block;
+      opacity: 1;
+      transition: all 250ms ease-in;
+      transform: translateY(0);
+    }
+    .fa-arrow-up:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .vita-work-title {
+    font-size: 1.5rem;
+  }
+}
+
+@include desktop {
+  .vita-wrapper {
+    max-width: 1200px;
+  }
+
+  .glider {
+    height: 350px;
+  }
+
+  .vita-work {
+    span:nth-child(1) {
+      min-width: 30%;
+    }
+  }
+
+  .vita-work-title {
+    font-size: 1.8rem;
+  }
+}
+
+@include large {
+  .glider {
+    height: 380px;
+  }
+
+  .vita-works {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    .vita-work:nth-child(1) {
+      margin-right: auto;
+    }
+    .vita-work {
+      width: 47.5%;
+      max-width: 100%;
+      margin-bottom: 3rem;
+
+      span:nth-child(1) {
+        min-width: fit-content;
+        width: 160px;
+      }
+      span:nth-child(2) {
+        // min-width: fit-content;
+        max-width: 60%;
+        word-break: keep-all;
+      }
+    }
+  }
+
+  .vita-work-title {
+    font-size: 1.5rem;
+  }
+}

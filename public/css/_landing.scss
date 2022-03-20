@@ -1,0 +1,253 @@
+.landing-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.landing-header {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+
+  width: 85%;
+  text-align: center;
+  margin-bottom: 3rem;
+  justify-content: center;
+  max-width: 850px;
+}
+
+.landing-left {
+  position: absolute;
+  left: 0;
+  width: 7px;
+  height: 100%;
+  background-color: $primary-light;
+  transition: transform 600ms ease, opacity 700ms ease;
+  transform: translateX(-80px) scale(1.2) rotate(-4deg);
+  opacity: 0;
+}
+.landing-left::before {
+  width: 500%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 7px;
+  content: "";
+  background-color: $primary-light;
+}
+.landing-left::after {
+  width: 500%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 7px;
+  content: "";
+  background-color: $primary-light;
+}
+
+.landing-right {
+  position: absolute;
+  right: 0;
+  width: 7px;
+  height: 100%;
+  background-color: $primary-light;
+  transform: translateX(80px) scale(1.2) rotate(4deg);
+  opacity: 0;
+  transition: transform 650ms ease-out, opacity 700ms ease-out;
+}
+.landing-right::before {
+  width: 500%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 7px;
+  content: "";
+  background-color: $primary-light;
+}
+.landing-right::after {
+  width: 500%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 7px;
+  content: "";
+  background-color: $primary-light;
+}
+
+.animation .landing-right {
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+.animation .landing-left {
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+.animation .landing-center {
+  .landing-title {
+    span:nth-of-type(1),
+    span:nth-of-type(2) {
+      transform: translateX(0%);
+    }
+  }
+
+  .landing-subtitle {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+.animation .cta-button {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.landing-center {
+  padding: 1.5rem 1.5rem;
+  overflow: hidden;
+}
+
+.landing-title {
+  font-size: 40px;
+  color: $primary-light;
+  font-family: $font-secondary;
+  margin-bottom: 0.5rem;
+  letter-spacing: 3px;
+
+  span:nth-of-type(1) {
+    transform: translateX(-150%);
+    transition: transform 800ms ease-in-out 600ms;
+    display: inline-block;
+  }
+
+  span:nth-of-type(2) {
+    transform: translateX(150%);
+    transition: transform 950ms ease-in-out 600ms;
+    display: inline-block;
+  }
+}
+
+.landing-subtitle {
+  line-height: 1.5;
+  color: $primary-light;
+  transform: translateX(-100%);
+  transition: all 1000ms ease-out 1500ms;
+  opacity: 0;
+}
+
+.landing-cta {
+  button {
+    border: 3px solid $primary-light;
+
+    background: none;
+    font-size: 1.2rem;
+    padding: 0 1rem;
+    font-family: $font-secondary;
+    cursor: pointer;
+    outline: none;
+    opacity: 0;
+    transform: translateY(+30vh);
+    transition: opacity 850ms ease-in-out 2200ms,
+      transform 850ms ease-in-out 2200ms;
+
+    a {
+      text-decoration: none;
+      color: $primary-light;
+    }
+  }
+
+  button:hover {
+    border-color: $primary-light-accent;
+    animation: cta-hover 1200ms ease-in alternate infinite;
+
+    a {
+      color: $primary-light-accent;
+    }
+  }
+}
+
+@keyframes cta-hover {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@include x-small {
+  .landing-center {
+    width: fit-content;
+  }
+
+  .landing-left {
+    transform: translateX(-220px) scale(1.2) rotate(-4deg);
+    transition: transform 900ms ease-out, opacity 1200ms ease-in;
+  }
+
+  .landing-center {
+    transition: opacity 1250ms ease-in-out;
+  }
+
+  .landing-right {
+    transform: translateX(220px) scale(1.2) rotate(4deg);
+    transition: transform 950ms ease-out, opacity 1250ms ease-in;
+  }
+}
+
+@include small {
+  .landing-center {
+    padding: 2.5rem 2.5rem;
+  }
+
+  .landing-header {
+    width: max-content;
+  }
+
+  .landing-title {
+    font-size: 50px;
+  }
+
+  .landing-right,
+  .landing-left {
+    width: 10px;
+  }
+
+  .landing-left::after,
+  .landing-left::before,
+  .landing-right::after,
+  .landing-right::before {
+    height: 10px;
+    width: 400%;
+  }
+}
+
+@include tablet {
+  .landing-title {
+    font-size: 70px;
+  }
+
+  .landing-subtitle {
+    font-size: 18px;
+  }
+}
+
+@include large {
+  .landing-subtitle {
+    font-size: 20px;
+  }
+}
+
+@include xl {
+  .landing-subtitle {
+    font-size: 22px;
+  }
+  .landing-title {
+    font-size: 100px;
+  }
+}

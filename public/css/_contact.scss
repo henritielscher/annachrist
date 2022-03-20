@@ -1,0 +1,203 @@
+.contact-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-container {
+  position: relative;
+  display: flex;
+  width: 85%;
+  max-width: 600px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.contact-left,
+.contact-right {
+  position: absolute;
+  width: 7px;
+  background-color: $primary-light;
+  height: 100%;
+}
+
+.contact-left {
+  left: 0;
+}
+
+.contact-right {
+  right: 0;
+}
+
+.contact-left::before {
+  width: 400%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 6px;
+  content: "";
+  background-color: $primary-light;
+}
+.contact-left::after {
+  width: 400%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 6px;
+  content: "";
+  background-color: $primary-light;
+}
+
+.contact-right::before {
+  width: 400%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 6px;
+  content: "";
+  background-color: $primary-light;
+}
+.contact-right::after {
+  width: 400%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 6px;
+  content: "";
+  background-color: $primary-light;
+}
+
+.contact-info {
+  text-align: center;
+  padding: 1.5rem 1.5rem;
+  overflow-y: hidden;
+
+  p {
+    margin-bottom: 1rem;
+    opacity: 0;
+
+    transition: opacity 1000ms ease-in-out;
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-family: $font-secondary;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    transform: translateY(-100px);
+    transition: transform 1000ms ease-out;
+  }
+
+  a {
+    opacity: 0;
+    display: inline-block;
+    color: $primary-light;
+    // font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transform: translateY(200px);
+    transition: transform 1200ms ease-out;
+    border: 2px solid $primary-light;
+    padding: 0.5rem 1rem;
+  }
+
+  a:hover {
+    color: $primary-light-accent;
+    border-color: $primary-light-accent;
+    animation: mail-pulse 1200ms ease-in-out infinite alternate;
+  }
+}
+
+@keyframes mail-pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.contact-visit {
+  .contact-info {
+    p {
+      opacity: 1;
+    }
+    h3 {
+      transform: translateY(0px);
+    }
+
+    a {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+}
+
+@include x-small {
+  .contact-info h3 {
+    font-size: 2rem;
+  }
+  .contact-container {
+    width: fit-content;
+  }
+}
+
+@include small {
+  .contact-info {
+    padding: 2.5rem 2.5rem;
+
+    h3 {
+      font-size: 2.5rem;
+    }
+  }
+  .contact-container {
+    .contact-right,
+    .contact-left {
+      width: 8px;
+    }
+
+    .contact-left::after,
+    .contact-left::before,
+    .contact-right::after,
+    .contact-right::before {
+      height: 8px;
+      width: 350%;
+    }
+  }
+}
+
+@include tablet {
+  .contact-container {
+    // width: 55%;
+
+    .contact-info {
+      p,
+      a {
+        font-size: 18px;
+      }
+      h3 {
+        font-size: 3.2rem;
+      }
+    }
+  }
+}
+
+@include desktop {
+  .contact-container {
+    // width: fit-content;
+  }
+
+  .contact-info {
+    h3 {
+      font-size: 4rem;
+    }
+
+    p,
+    a {
+      font-size: 20px;
+    }
+  }
+}

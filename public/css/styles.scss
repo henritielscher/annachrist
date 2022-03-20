@@ -1,0 +1,175 @@
+@import "resets";
+@import "variables";
+@import "mixins";
+
+// %% FONT IMPORT
+@font-face {
+  font-family: "Bungee";
+  src: url("../fonts/Bungee-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Courier Prime";
+  src: url("../fonts/CourierPrime-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Courier Prime";
+  src: url("../fonts/CourierPrime-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+// %% GLOBAL STYLES
+html {
+  box-sizing: border-box;
+  font-size: 15px;
+  color: $primary-light;
+  background-color: $primary-dark;
+  overflow-x: hidden;
+  font-family: $font-primary;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+.main-header {
+  font-family: $font-secondary;
+  font-size: 40px;
+  margin-bottom: 2rem;
+  letter-spacing: 10px;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  line-height: 1.2;
+}
+
+// %% NAVBAR
+@import "navbar";
+
+// %% LANDING PAGE
+@import "landing";
+
+// %% ABOUT
+@import "about";
+
+// %% VITA SCRIPTS & DOCUMENTARIES
+@import "vita";
+
+// %% CONTACT
+@import "contact";
+
+//  %% FOOTER
+footer {
+  // background-color: $primary-light;
+  display: flex;
+  flex-direction: column;
+  background-color: #292929;
+  width: 100%;
+  height: 90px;
+  line-height: 1.2;
+
+  // align-items: center;
+  // padding: 0 1rem;
+  justify-content: center;
+  font-size: 14px;
+
+  a {
+    color: $primary-light;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $primary-light-accent;
+  }
+
+  .footer-links {
+    margin: 0 auto;
+    width: 90%;
+    padding: 0 1rem 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .social-media {
+    a {
+      display: flex;
+      align-items: center;
+    }
+
+    span {
+      display: none;
+      margin-left: 0.3rem;
+      transform: translateY(2px);
+    }
+
+    i {
+      font-size: 25px;
+      cursor: pointer;
+    }
+  }
+
+  .copyright {
+    color: grey;
+    text-align: center;
+  }
+}
+
+// %% IMPRESS
+
+.impress-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 85%;
+  margin: 80px auto 2rem auto;
+  max-width: 800px;
+  line-height: 1.3;
+
+  .webmaster {
+    color: $primary-light;
+  }
+
+  p {
+    margin-bottom: 1rem;
+
+    strong {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+  }
+
+  ul {
+    margin-left: 1rem;
+    list-style: inherit;
+  }
+}
+
+.blink .main-header span {
+  visibility: hidden;
+}
+
+// %% MEDIA QUERRIES
+@include x-small {
+  footer {
+    .social-media {
+      span {
+        display: inline;
+      }
+    }
+  }
+}
+
+@include small {
+  .impress-wrapper {
+    width: 80%;
+  }
+}
+
+@include tablet {
+  .main-header {
+    font-size: 50px;
+  }
+}

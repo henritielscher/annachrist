@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Email contact to Anna Christ.">
+    <meta name="keywords" content="anna christ, kontakt, email">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../public/css/styles.css" />
+
+    <title>Anna Christ - Contact</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <ul class="navbar-lang">
+          <li data-lang="de" class="inactive-language">DE</li>
+          <li class="active-language" data-lang="en">EN</li>
+        </ul>
+        <ul class="navbar-items">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="scripts.html">Screenplay</a></li>
+          <li><a href="documentaries.html">Documentary</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="navbar-burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+    </header>
+    <main class="contact-wrapper">
+      <!-- <div class="main-header">CONTACT_</div> -->
+      <div class="contact-container">
+<div class="contact-left"></div>
+        <div class="contact-info">
+          <h3>@nna Christ</h3>
+          <p>Please contact me via email</p>
+          <a href="mailto:amc-hh@gmx.de">amc-hh@gmx.de</a>
+        </div>
+        <div class="contact-right"></div>
+      </div>
+      </div>
+    </main>
+    <footer>
+      <nav class="footer-links">
+        <a href="impress.html">Impress & Privacy</a>
+        <div class="social-media">
+          <a href="https://vimeo.com/user35570468" target="_blank">
+            <i class="fab fa-vimeo-v"></i><span>isit me!</span></a
+          >
+        </div>
+      </nav>
+      <div class="copyright">
+        &copy; <span class="year">2021</span> Anna Christ
+      </div>
+    </footer>
+
+    <script src="../public/js/navbar.js"></script>
+    <script>
+      const contactContainer = document.querySelector(".contact-container");
+
+      document.addEventListener("DOMContentLoaded", () => {
+        contactContainer.classList.add("contact-visit");
+      });
+    </script>
+  </body>
+</html>
