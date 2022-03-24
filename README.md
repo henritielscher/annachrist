@@ -2,7 +2,7 @@
 
 ## Description
 
----
+
 
 This website was the first commissioned work I uploaded and also built from scratch and let me made my first experience with actually deploying something.
 
@@ -16,14 +16,14 @@ The goal was to land an agency for her and it worked! So everyone's happy now! :
 
 ## Features
 
----
+
 
 -   a non-carousel slider library Glider.js | [Link](https://nickpiscitelli.github.io/Glider.js/)
 -   two supported languages by a Cookie-Setup | [MDN-Link](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie)
 
 ## Additional Infos / Thoughts
 
----
+
 
 As I evolved my skills after this project I would certainly clean up a little.
 
